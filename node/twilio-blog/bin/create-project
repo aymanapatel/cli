@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 
-require = require('esm')(module /*, options */) // Support ESM without need to transpile for different node versions.
-require('../src/cli')
+require = require('esm')(module /*, options*/);
+require('../src/cli').cli(process.argv);
