@@ -3,6 +3,17 @@
   "version": "1.0.0",
   "description": "Twilio CLI",
   "main": "index.js",
+  "bin": {
+    "@aymanapatel": "bin/create-project",
+    "create-project": "bin/create-project"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "cli",
+    "create-project"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

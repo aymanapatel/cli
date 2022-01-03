@@ -6,5 +6,9 @@ Ayman Patel
 
 ==CLI (Twilio Blog)
 
+
+1. `npm i`
+2. `npm link`
+
 === Libraries used
 
