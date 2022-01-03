@@ -1,0 +1,7 @@
+=Java Projects
+:Ayman Patel:
+:toc:
+
+== CLI using Picocli
+
+- https://github.com/aymanapatel/java-cli[Java CLI Github project]
