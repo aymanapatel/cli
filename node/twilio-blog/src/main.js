@@ -8,6 +8,7 @@ import path from 'path';
 import { projectInstall } from 'pkg-install';
 import license from 'spdx-license-list/licenses/MIT';
 import { promisify } from 'util';
+import { fullPathImport } from './utility';
 
 const access = promisify(fs.access);
 const writeFile = promisify(fs.writeFile);
@@ -53,11 +54,11 @@ export async function createProject(options) {
   options = {
     ...options,
     targetDirectory: options.targetDirectory || process.cwd(),
-    email: 'hi@dominik.dev',
-    name: 'Dominik Kundel',
+    email: 'aymanpatel@test.com',
+    name: 'Ayman Patel',
   };
 
-  const fullPathName = new URL(import.meta.url).pathname;
+  const fullPathName = fullPathImport()
   const templateDir = path.resolve(
     fullPathName.substr(fullPathName.indexOf('/')),
     '../../templates',
@@ -68,7 +69,7 @@ export async function createProject(options) {
   try {
     await access(templateDir, fs.constants.R_OK);
   } catch (err) {
-    console.error('%s Invalid template name', chalk.red.bold('ERROR'));
+    console.error('%s Invalid template name %s ', chalk.red.bold('ERROR'), chalk.underline.bold.italic(options.template));
     process.exit(1);
   }
 

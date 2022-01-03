@@ -1,6 +1,9 @@
 import arg from 'arg';
 import inquirer from 'inquirer';
+import path from 'path';
+
 import { createProject } from './main';
+import { fullPathImport, getDirectories } from "./utility";
 
 function parseArgumentsIntoOptions(rawArgs) {
   const args = arg(
@@ -33,13 +36,19 @@ async function promptForMissingOptions(options) {
     };
   }
 
+  const fullPathName = fullPathImport()
+  const templateDirCli = path.resolve(
+    fullPathName.substr(fullPathName.indexOf('/')),
+    '../../templates'
+  );
+
   const questions = [];
   if (!options.template) {
     questions.push({
       type: 'list',
       name: 'template',
       message: 'Please choose which project template to use',
-      choices: ['javascript', 'typescript'],
+      choices: await getDirectories(templateDirCli),
       default: defaultTemplate,
     });
   }
@@ -66,5 +75,3 @@ export async function cli(args) {
   options = await promptForMissingOptions(options);
   await createProject(options);
 }
-
-// ...
