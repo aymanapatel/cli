@@ -1,4 +1,4 @@
-=Java Projects
+= Java Projects
 :Ayman Patel:
 :toc:
 
