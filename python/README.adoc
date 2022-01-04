@@ -1,0 +1,15 @@
+= Python
+Ayman Patel
+:toc:
+:icons: font
+
+
+== Python Twitter
+
+https://github.com/aymanapatel/python-scripts/tree/main/python-twitter[Github link]
+
+=== Libraries used
+
+1. https://pypi.org/project/click/7.1.2/[Click]
+2. https://pypi.org/project/oauthlib/[Oauth Lib]
+3. https://pypi.org/project/tweepy/[Tweepy]
